@@ -1,0 +1,32 @@
+#include <stdio.h>
+// A C programme that works as a ATM machine for any bank.
+
+int main() {
+    
+    float x =  1000000.00; // initial amount in bank account 
+    float y;
+    char ch;
+    printf("Initial amount = %f", x);
+    printf("\nC for credit\nD for debit\nB for balance\n");
+    scanf("\n%c", &ch);
+    switch(ch){
+         case 'C': printf(" Enter credit amount\n ");
+                   scanf("%f", &y);
+                   x=x+y;
+                   printf("New amount = %f " , x);
+                   break;
+         case 'D': printf(" Enter debit amount\n");
+                   scanf("%f" , &y);
+                   if(x>=y){
+                    x=x-y;
+                    printf(" New amount = %f" , x);
+                    } else{
+                    printf("Insufficient amount  ");
+                   }
+                   break;
+         case 'B': printf(" Amount in your bank = %f" , x);
+                   break;
+         default: printf(" choose correct option");           
+                    }
+      return 0;
+}
